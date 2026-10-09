@@ -49,8 +49,8 @@
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "typecheck": "tsc --noEmit -p tsconfig.json",
-    "test": "tsx --test test/**/*.test.ts",
-    "test:watch": "tsx --test --watch test/**/*.test.ts",
+    "test": "tsx --test test/*.test.ts",
+    "test:watch": "tsx --test --watch test/*.test.ts",
     "demo": "vite --host 127.0.0.1",
     "prepublishOnly": "npm run build && npm test"
   },
