@@ -1,0 +1,80 @@
+{
+  "name": "motion-maps",
+  "version": "0.1.2",
+  "description": "Plug-and-play movement, tracking and replay controls for JavaScript maps.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./maplibre": {
+      "types": "./dist/maplibre.d.ts",
+      "import": "./dist/maplibre.js"
+    },
+    "./google-maps": {
+      "types": "./dist/google-maps.d.ts",
+      "import": "./dist/google-maps.js"
+    },
+    "./leaflet": {
+      "types": "./dist/leaflet.d.ts",
+      "import": "./dist/leaflet.js"
+    },
+    "./postgres": {
+      "types": "./dist/postgres.d.ts",
+      "import": "./dist/postgres.js"
+    },
+    "./react": {
+      "types": "./dist/react.d.ts",
+      "import": "./dist/react.js"
+    },
+    "./react-native": {
+      "types": "./dist/react-native.d.ts",
+      "import": "./dist/react-native.js"
+    }
+  },
+  "files": [
+    "dist",
+    "docs",
+    "examples",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "tsx --test test/**/*.test.ts",
+    "test:watch": "tsx --test --watch test/**/*.test.ts",
+    "demo": "vite --host 127.0.0.1",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "devDependencies": {
+    "@types/pg": "^8.23.1",
+    "@types/react": "^19.3.0",
+    "react": "^19.3.0",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3",
+    "vite": "^8.3.1"
+  },
+  "keywords": [
+    "maps",
+    "tracking",
+    "replay",
+    "fleet",
+    "animation",
+    "geospatial"
+  ],
+  "dependencies": {
+    "maplibre-gl": "^6.11.2",
+    "pg": "^8.23.0"
+  },
+  "peerDependencies": {
+    "react": ">=18"
+  }
+}
